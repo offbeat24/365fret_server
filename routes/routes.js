@@ -7,6 +7,7 @@ const event = require("./main/Event.js");
 // 이벤트 관리
 router.get("/getEvents", event.getEvents);
 router.put("/addEvent", event.addEvent);
+router.post("/deleteEvent", event.deleteEvent);
 
 
 module.exports = router;
