@@ -27,3 +27,16 @@ exports.addEvent = async (req, res) => {
     else res.send("True");
   })
 }
+
+exports.deleteEvent = async (req, res) => {
+  console.log("deleteEvents router called"); // Log
+  const key = req.body.key;
+  console.log("key: " + key)  // Log
+
+  connection.query(`DELETE FROM 365fret.event WHERE event_key = ?`,
+    [key],
+    (err) => {
+    if (err) console.log(err);
+    else res.send("True");
+  })
+}
