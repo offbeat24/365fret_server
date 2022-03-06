@@ -40,3 +40,4 @@ exports.deleteEvent = async (req, res) => {
     else res.send("True");
   })
 }
+
