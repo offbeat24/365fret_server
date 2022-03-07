@@ -16,5 +16,4 @@ router.post("/getUserEvents", renderData.getUserEvents);
 // 공지 관리
 router.get("/getNotices", notice.getNotices);
 
-
 module.exports = router;

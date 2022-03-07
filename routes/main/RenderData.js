@@ -7,7 +7,7 @@ exports.getUserEvents = async (req, res) => {
     console.log("userID: " + userID);
 
     connection.query(
-        `SELECT * FROM 365fret.event WHERE event_key in (SELECT fk_event_key FROM 365fret.event_member WHERE fk_user_id=?)`,
+        `SELECT * FROM 365fret.event WHERE event_key in (SELECT fk_event_key FROM 365fret.event_member WHERE fk_user_id=?) ORDER BY eventdate asc`,
         [userID]
         , (err, response) => {
             if (err) console.log(err);

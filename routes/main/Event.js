@@ -18,10 +18,10 @@ exports.getEvents = async (req, res) => {
 
 exports.addEvent = async (req, res) => {
   console.log("addEvents router called"); // Log
-  const [type, name, startdate, enddate, eventdate] = req.body;
+  const [type, name, startdate, enddate, eventdate, eventplace] = req.body;
 
-  connection.query(`INSERT INTO 365fret.event(type, name, startdate, enddate, eventdate) VALUE(?,?,?,?,?)`,
-    [type, name, startdate, enddate, eventdate],
+  connection.query(`INSERT INTO 365fret.event(type, name, startdate, enddate, eventdate, eventplace) VALUE(?,?,?,?,?,?)`,
+    [type, name, startdate, enddate, eventdate, eventplace],
     (err) => {
     if (err) console.log(err);
     else res.send("True");
