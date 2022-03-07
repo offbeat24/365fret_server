@@ -12,7 +12,7 @@ router.post("/deleteEvent", event.deleteEvent);
 
 // 렌더용 데이터 관리
 router.post("/getUserEvents", renderData.getUserEvents);
-
+router.post("/getUserProfile", renderData.getUserProfile);
 // 공지 관리
 router.get("/getNotices", notice.getNotices);
 
