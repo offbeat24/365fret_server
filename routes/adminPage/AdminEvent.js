@@ -31,9 +31,9 @@ exports.adminAddEvent = async (req, res) => {
 exports.adminDeleteEvent = async (req, res) => {
   console.log("adminDeleteEvents router called"); // Log
   const key = req.body.key;
-  console.log("key: " + key)  // Log
+  console.log("key: " + key + "deleted");// Log
 
-  connection.query(`DELETE FROM 365fret.event WHERE event_key = ?`,
+  connection.query(`DELETE FROM 365fret.event WHERE event_key IN ?`,
     [key],
     (err) => {
     if (err) console.log(err);
