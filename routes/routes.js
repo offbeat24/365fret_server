@@ -33,4 +33,6 @@ router.post("/adminDeleteEvent", adminEvent.adminDeleteEvent);
 
 //어드민 페이지 공지 관리
 router.get("/adminGetNotices", adminNotice.adminGetNotices);
+router.post("/adminDeleteNotice", adminNotice.adminDeleteNotice);
+
 module.exports = router;

@@ -19,3 +19,16 @@ exports.adminGetNotices = async (req, res) => {
     }
   })
 }
+
+exports.adminDeleteNotice = async (req, res) => {
+  console.log("adminDeleteNotice router called"); // Log
+  const key = req.body.key;
+  console.log("post_key: " + key + " deleted");// Log
+
+  connection.query(`DELETE FROM 365fret.notice_board WHERE post_key IN ?`,
+    [key],
+    (err) => {
+    if (err) console.log(err);
+    else res.send("True");
+  })
+}
