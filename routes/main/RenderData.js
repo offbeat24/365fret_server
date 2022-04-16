@@ -8,7 +8,6 @@ var day = ('0' + today.getDate()).slice(-2);
 const dateString = year + '-' + month  + '-' + day;
 
 exports.getUserEvents = async (req, res) => {
-    console.log("getUserEvents router called"); // Log
     const userID = req.body.userID;
     console.log("userID: " + userID);
 
@@ -21,7 +20,6 @@ exports.getUserEvents = async (req, res) => {
     })
 }
 exports.getUserComingEvents = async (req, res) => {
-    console.log("getUserComingEvents router called"); // Log
     const userID = req.body.userID;
     console.log("userID: " + userID);
     connection.query(
@@ -34,7 +32,6 @@ exports.getUserComingEvents = async (req, res) => {
 }
 
 exports.getUserPassedEvents = async (req, res) => {
-    console.log("getUserPassedEvents router called"); // Log
     const userID = req.body.userID;
     console.log("userID: " + userID);
 
@@ -48,7 +45,6 @@ exports.getUserPassedEvents = async (req, res) => {
 }
 
 exports.getUserProfile = async (req, res) => {
-    console.log("getUserProfile router called");
     const userID = req.body.userID;
     console.log("userID: " +userID);
 
