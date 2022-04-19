@@ -32,3 +32,32 @@ exports.adminDeleteNotice = async (req, res) => {
     else res.send("True");
   })
 }
+
+exports.adminAddNotice = async (req, res) => {
+  console.log("adminAddNotice router called"); // Log
+  const [title, detail, writer] = req.body;
+  const postTime = yyyymmddhhmmss(new Date());
+
+  connection.query(`INSERT INTO 365fret.notice_board(title, detail, post_date, post_writter) VALUE(?,?,?,?)`,
+    [title, detail, postTime ,writer],
+    (err) => {
+    if (err) console.log(err);
+    else res.send("True");
+  })
+}
+
+const yyyymmddhhmmss = (d) => {
+  var year = d.getFullYear();
+  var month = ('0' + (d.getMonth() + 1)).slice(-2);
+  var day = ('0' + d.getDate()).slice(-2);
+
+  var dateString = year + '-' + month  + '-' + day;
+
+  var hours = ('0' + d.getHours()).slice(-2); 
+  var minutes = ('0' + d.getMinutes()).slice(-2);
+  var seconds = ('0' + d.getSeconds()).slice(-2); 
+
+  var timeString = hours + ':' + minutes  + ':' + seconds;
+
+  return (dateString + ' ' + timeString);
+}

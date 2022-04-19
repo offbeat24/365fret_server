@@ -5,7 +5,7 @@ const renderData = require("./main/RenderData.js");
 const notice = require("./main/Notice.js");
 
 const adminEvent = require("./adminPage/AdminEvent.js");
-// const adminMember = require("./admin_page/AdminMember.js");
+const adminMember = require("./adminPage/AdminMember.js");
 const adminNotice = require("./adminPage/AdminNotice.js");
 // const adminReport = require("./admin_page/AdminReport.js");
 // const adminSchedule = require("./admin_page/AdminSchedule.js");
@@ -34,5 +34,8 @@ router.post("/adminDeleteEvent", adminEvent.adminDeleteEvent);
 //어드민 페이지 공지 관리
 router.get("/adminGetNotices", adminNotice.adminGetNotices);
 router.post("/adminDeleteNotice", adminNotice.adminDeleteNotice);
+router.put("/adminAddNotice", adminNotice.adminAddNotice);
 
+//어드민 페이지 멤버 관리
+router.get("/adminFindMember", adminMember.adminFindMember);
 module.exports = router;
