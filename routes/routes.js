@@ -37,5 +37,5 @@ router.post("/adminDeleteNotice", adminNotice.adminDeleteNotice);
 router.put("/adminAddNotice", adminNotice.adminAddNotice);
 
 //어드민 페이지 멤버 관리
-router.get("/adminFindMember", adminMember.adminFindMember);
+router.post("/adminFindMember", adminMember.adminFindMember);
 module.exports = router;
