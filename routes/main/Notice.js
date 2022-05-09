@@ -2,7 +2,6 @@ const mysqlConnection = require("../../modules/mysql");
 const connection = mysqlConnection.connection;
 
 exports.getNotices = async (req, res) => {
-  console.log("getNotices router called"); // Log
   const query = `SELECT n.title, n.detail, n.post_date, ud.year, ud.name
                   FROM  notice_board AS n
                   JOIN user_data AS ud
