@@ -35,8 +35,8 @@ exports.adminDeleteNotice = async (req, res) => {
 
 exports.adminAddNotice = async (req, res) => {
   console.log("adminAddNotice router called"); // Log
-  console.log(req.body);
   const [title, detail, writer] = req.body;
+  console.log(writer);
   const postTime = yyyymmddhhmmss(new Date());
 
   connection.query(`INSERT INTO 365fret.notice_board(title, detail, post_date, post_writter) VALUE(?,?,?,?)`,
