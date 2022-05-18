@@ -20,3 +20,18 @@ exports.adminFindMember = async (req, res) => {
     })
 }
 
+exports.adminGetMembers = async (req, res) => {
+    console.log("adminGetMembers router called"); // Log
+    const query = `SELECT id, name
+                    FROM  user_data
+                    ORDER BY year asc`
+    connection.query(query, (err, response) => {
+        if (err) console.log(err);
+        if (response.length != 0) {
+            res.send({ result: response });
+        }
+        else {
+            res.send({ result: 'no item' });
+        }
+    })
+}
